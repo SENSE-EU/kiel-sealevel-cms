@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "hotspots",
+  "info": {
+    "singularName": "hotspot",
+    "pluralName": "hotspots",
+    "displayName": "Hotspot",
+    "description": "Interactive educational content anchored to a scene model"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxLength": 100
+    },
+    "body": {
+      "type": "blocks",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "video": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["videos"]
+    },
+    "anchor": {
+      "type": "string",
+      "required": true
+    },
+    "order": {
+      "type": "integer",
+      "required": true,
+      "default": 0,
+      "min": 0
+    },
+    "scene": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::scene.scene",
+      "inversedBy": "hotspots"
+    }
+  }
+}

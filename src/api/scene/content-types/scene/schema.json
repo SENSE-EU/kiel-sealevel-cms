@@ -1,0 +1,61 @@
+{
+  "kind": "collectionType",
+  "collectionName": "scenes",
+  "info": {
+    "singularName": "scene",
+    "pluralName": "scenes",
+    "displayName": "Scene",
+    "description": "An underwater scene and its associated content"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxLength": 100
+    },
+    "slug": {
+      "type": "string",
+      "required": true,
+      "maxLength": 60,
+      "regex": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "teaser": {
+      "type": "text"
+    },
+    "cardImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "model": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["files"]
+    },
+    "startViewpoint": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::viewpoint.viewpoint"
+    },
+    "viewpoints": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::viewpoint.viewpoint",
+      "mappedBy": "scene"
+    },
+    "hotspots": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::hotspot.hotspot",
+      "mappedBy": "scene"
+    },
+    "credits": {
+      "type": "text",
+      "maxLength": 260
+    }
+  }
+}
