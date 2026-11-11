@@ -1,3 +1,3 @@
 import { factories } from "@strapi/strapi";
 
-export default factories.createCoreRouter("api::hotspot.hotspot");
+export default factories.createCoreRouter("api::hotspot.hotspot", { only: [] });

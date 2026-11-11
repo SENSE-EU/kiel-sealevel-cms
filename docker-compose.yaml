@@ -9,9 +9,10 @@ services:
     env_file: .env  # All variables from .env are injected into the container
     volumes:
       - ./config:/opt/app/config
+      - ./packages:/opt/app/packages
       - ./src:/opt/app/src
       - ./package.json:/opt/package.json
-      - ./package-lock.json:/opt/package-lock.json
+      - ./pnpm-lock.yaml:/opt/pnpm-lock.yaml
       - ./.env:/opt/app/.env  # Needed because Strapi uses dotenv to read .env in development
       - ./public/uploads:/opt/app/public/uploads
     ports:
