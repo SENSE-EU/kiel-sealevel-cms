@@ -19,7 +19,7 @@ concurrency:
 
 env:
   REGISTRY: acrkielweupoc.azurecr.io
-  IMAGE_NAME: kiel-cms
+  IMAGE_NAME: kiel-sealevel-cms
 
 jobs:
   build:
