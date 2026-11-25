@@ -1,6 +1,9 @@
 node_modules/
+dist/
 .tmp/
 .cache/
 .git/
 build/
-.env
+.env*
+public/uploads/*
+!public/uploads/.gitkeep

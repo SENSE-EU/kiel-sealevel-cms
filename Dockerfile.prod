@@ -1,0 +1,37 @@
+FROM node:24-alpine
+
+RUN apk add --no-cache \
+    build-base \
+    gcc \
+    autoconf \
+    automake \
+    zlib-dev \
+    libpng-dev \
+    bash \
+    vips-dev \
+    git
+
+RUN npm install -g corepack && corepack enable
+
+WORKDIR /opt/
+
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
+RUN pnpm install --frozen-lockfile
+
+ENV PATH=/opt/node_modules/.bin:$PATH
+
+WORKDIR /opt/app
+
+COPY . .
+
+RUN chown -R node:node /opt/app
+
+USER node
+
+ENV NODE_ENV=production
+
+RUN pnpm build
+
+EXPOSE 1337
+
+CMD ["pnpm", "start"]
