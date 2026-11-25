@@ -1,0 +1,90 @@
+name: Build and Publish CMS
+
+on:
+  push:
+    branches:
+      - main
+
+  release:
+    types:
+      - published
+
+permissions:
+  contents: read
+  packages: write
+
+concurrency:
+  group: cms-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  REGISTRY: acrkielweupoc.azurecr.io
+  IMAGE_NAME: kiel-cms
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Determine image tags
+        id: meta
+        shell: bash
+        env:
+          OWNER: ${{ github.repository_owner }}
+          EVENT_NAME: ${{ github.event_name }}
+          REF_NAME: ${{ github.ref_name }}
+          SHA: ${{ github.sha }}
+        run: |
+          OWNER=$(echo "$OWNER" | tr '[:upper:]' '[:lower:]')
+          IMAGE="${REGISTRY}/${OWNER}/${IMAGE_NAME}"
+
+          if [[ "$EVENT_NAME" == "push" ]]; then
+            TAGS="$IMAGE:staging"
+
+          elif [[ "$EVENT_NAME" == "release" ]]; then
+            VERSION="$REF_NAME"
+
+            if [[ ! "$VERSION" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+              echo "Invalid release version: $VERSION"
+              exit 1
+            fi
+
+            TAGS="$IMAGE:preprod
+          $IMAGE:$VERSION"
+
+          else
+            echo "Unsupported event: $EVENT_NAME"
+            exit 1
+          fi
+
+          TAGS="$TAGS
+          $IMAGE:sha-$SHA"
+
+          {
+            echo "tags<<EOF"
+            echo "$TAGS"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login to ACR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ secrets.ACR_USERNAME }}
+          password: ${{ secrets.ACR_PASSWORD }}
+
+      - name: Build and publish CMS
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
