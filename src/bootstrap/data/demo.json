@@ -1,0 +1,114 @@
+{
+  "source": "public/SEALEVEL_text_sign-off-v3.xlsx",
+  "scene": {
+    "slug": "munitions",
+    "title": {
+      "de": "Munition im Meer",
+      "en": "Munitions in the sea"
+    }
+  },
+  "viewpoints": [
+    {
+      "sourceId": "VP-01",
+      "name": "Above a munition pile — start view",
+      "anchor": "vp_pile",
+      "order": 1,
+      "label": {
+        "de": "Das Munitionsfeld",
+        "en": "Munitions Field"
+      }
+    },
+    {
+      "sourceId": "VP-02",
+      "name": "Close on a single casing with growth",
+      "anchor": "vp_casing",
+      "order": 2,
+      "label": {
+        "de": "Korrosion im Detail",
+        "en": "Corrosion Close-Up"
+      }
+    },
+    {
+      "sourceId": "VP-03",
+      "name": "A survey vehicle working the site",
+      "anchor": "vp_survey",
+      "order": 3,
+      "label": {
+        "de": "Das Vermessungsfahrzeug",
+        "en": "Survey Vehicle"
+      }
+    }
+  ],
+  "hotspots": [
+    {
+      "sourceId": "HS-01",
+      "textRef": "CT-01",
+      "anchor": "hs_1",
+      "order": 1,
+      "title": {
+        "de": "Was hier unten liegt",
+        "en": "What's down here"
+      },
+      "body": {
+        "de": "Etwa 1,6 Millionen Tonnen konventioneller Munition – sowie bis zu 5.000 Tonnen chemischer Munition – liegen in der Nord- und Ostsee: Seeminen, Bomben, Granaten, Phosphor. Der Großteil stammt aus den beiden Weltkriegen. Ein Teil wurde dort entsorgt, ein anderer bei Unfällen verloren. Seither liegt das Material auf dem Meeresboden.",
+        "en": "Around 1.6 million tonnes of conventional ammunition — and up to 5,000 tonnes of chemical ammunition — lie in the North Sea and the Baltic: sea mines, bombs, grenades, phosphorus. Most dates from the two world wars. Some was deliberately dumped, some lost in accidents. It has rested on the seabed ever since."
+      }
+    },
+    {
+      "sourceId": "HS-02",
+      "textRef": "CT-02",
+      "anchor": "hs_2",
+      "order": 2,
+      "title": {
+        "de": "Sie bleibt nicht dauerhaft dicht",
+        "en": "It doesn't stay sealed"
+      },
+      "body": {
+        "de": "Die Hüllen korrodieren und werden zunehmend undicht. Dabei geben die versunkenen Munitionsteile Jahr für Jahr Schadstoffe an das Wasser und das Sediment ab. Diese können eine Gefahr für Meereslebewesen, Pflanzen und möglicherweise auch für den Menschen darstellen. Die Risiken beschränken sich somit nicht auf die Möglichkeit einer Explosion: Auch die schleichende Freisetzung von Schadstoffen führt zu einer zunehmenden Belastung der Meeresumwelt",
+        "en": "The casings are corroding and gradually losing their watertight integrity. As they deteriorate, the submerged ammunition releases harmful substances into the water and sediment year after year. These substances can pose a threat to marine animals, plants and potentially human health. The risks therefore extend beyond the possibility of an explosion: the gradual release of contaminants is also causing an increasing burden on the marine environment."
+      }
+    },
+    {
+      "sourceId": "HS-03",
+      "textRef": "CT-03",
+      "anchor": "hs_3",
+      "order": 3,
+      "title": {
+        "de": "Sie wird lokalisiert",
+        "en": "Finding it"
+      },
+      "body": {
+        "de": "Bevor Munition im Meer geborgen werden kann, muss sie zunächst lokalisiert werden. Dafür kommen unterschiedliche Methoden zum Einsatz: Taucher untersuchen den Meeresboden direkt vor Ort, während ferngesteuerte Unterwasserfahrzeuge (ROVs) und autonome Unterwasserfahrzeuge ihn mithilfe von Sonar und Kameras systematisch erfassen. Die Fahrzeuge des GEOMAR haben die betreffenden Gebiete dokumentiert. Allein in der Kolberger Heide vor Kiel sind zahlreiche Munitionsansammlungen, die im Zeitraum von 2017 bis 2024 kartiert wurden.",
+        "en": "Before ammunition can be recovered from the sea, it first has to be located. Various methods are used for this purpose: divers inspect the seafloor directly, while remotely operated vehicles (ROVs) and autonomous underwater vehicles systematically survey it using sonar and cameras. GEOMAR’s underwater vehicles have documented the areas in detail. In the Kolberger Heide off Kiel, numerous ammunition accumulations have been identified and mapped between 2017 and 2024."
+      }
+    },
+    {
+      "sourceId": "HS-04",
+      "textRef": "CT-04",
+      "anchor": "hs_4",
+      "order": 4,
+      "title": {
+        "de": "Sie wird gebprgen",
+        "en": "Lifting it out"
+      },
+      "body": {
+        "de": "Allein in der Kolberger Heide in der Kieler Bucht befinden sich zahlreiche bekannte Munitionsansammlungen. GEOMAR hat diese im Rahmen verschiedener Forschungsausfahrten zwischen 2017 und 2024 mithilfe von Sonar und hochauflösenden Fotomosaiken untersucht und dokumentiert.",
+        "en": "In the Kolberger Heide area of ​​the Bay of Kiel alone, there are numerous known accumulations of munitions. Between 2017 and 2024, GEOMAR investigated and documented these sites during various research expeditions, using sonar and high-resolution photomosaics."
+      }
+    },
+    {
+      "sourceId": "HS-06",
+      "textRef": "CT-06",
+      "anchor": "hs_6",
+      "order": 6,
+      "title": {
+        "de": "Jemand kümmert sich darum",
+        "en": "Someone is dealing with it"
+      },
+      "body": {
+        "de": "Die Bergung von Munitionsaltlasten aus Nord- und Ostsee wird zunehmend vorangetrieben. Bund und Küstenländer arbeiten dabei gemeinsam mit Forschungseinrichtungen und spezialisierten Unternehmen daran, die Munitionsbestände zu erfassen, geeignete Bergungsverfahren zu entwickeln und deren praktische Umsetzung vorzubereiten. Ziel ist es, die historische Belastung der Meere Schritt für Schritt zu reduzieren und die Voraussetzungen für eine systematische und möglichst umweltschonende Bergung und Entsorgung zu schaffen.",
+        "en": "Efforts to recover unexploded wartime ammunition from the North and Baltic Seas are gaining momentum. Federal and state authorities are working together with research institutions and specialised companies to map ammunition deposits, develop suitable recovery methods and prepare for their practical implementation. The aim is to gradually reduce this historical legacy in our seas and establish the foundations for systematic recovery and disposal in ways that minimise environmental impact."
+      }
+    }
+  ]
+}
