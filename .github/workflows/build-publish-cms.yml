@@ -82,6 +82,8 @@ jobs:
         with:
           context: .
           file: ./Dockerfile.prod
+          build-args: |
+            PUBLIC_URL=${{ github.event_name == 'release' && vars.PUBLIC_URL_PREPROD || vars.PUBLIC_URL_STAGING }}
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           cache-from: type=gha
