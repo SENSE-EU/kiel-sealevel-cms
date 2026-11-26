@@ -17,9 +17,13 @@ A missing scene in the requested language returns 404; an empty listing returns
 200 with `{ data: [] }`.
 
 The service owns explicit field and relation selections. Clients do not supply
-Strapi filters, population or field selections. Media URLs retain their stored
-root-relative or HTTP(S) form. Frontend deployments must serve or proxy
-root-relative `/uploads` URLs to the CMS.
+Strapi filters, population or field selections. Stored `/uploads/...` media
+paths are resolved against Strapi's configured `server.url`. In production,
+set `PUBLIC_URL` to the externally reachable CMS URL, including any deployment
+prefix (for example, `https://example.com/cms`). External HTTP(S) media URLs and
+already-prefixed paths are returned unchanged. When `server.url` is empty, as
+in local development, `/uploads/...` paths remain root-relative. The public API
+routes themselves remain available directly under `/api/public/...` upstream.
 
 ## Errors
 
