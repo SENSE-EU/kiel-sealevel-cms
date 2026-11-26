@@ -1,4 +1,4 @@
-import type { Core } from "@strapi/strapi";
+import type { Core, Modules } from "@strapi/strapi";
 import path from "node:path";
 
 import demoMedia from "./data/demo-media.json";
@@ -15,7 +15,10 @@ const HOTSPOT_UID = "api::hotspot.hotspot";
 const MEDIA_SEED_VERSION = "demo-media-v1";
 
 type MediaType = "image" | "video";
-type MediaRelation = Partial<Record<MediaType, number>>;
+type MediaRelation = Pick<
+  Modules.Documents.Params.Data.Input<typeof HOTSPOT_UID>,
+  MediaType
+>;
 type SelectedMedia = {
   sourceId: string;
   type: MediaType;
@@ -251,7 +254,11 @@ export async function seedDemoMediaOnce(strapi: Core.Strapi) {
       );
     }
 
-    assignment.relations[type] = fileId;
+    if (type === "image") {
+      assignment.relations.image = [fileId];
+    } else {
+      assignment.relations.video = fileId;
+    }
   }
 
   const hotspots = strapi.documents(HOTSPOT_UID);

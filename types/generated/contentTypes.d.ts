@@ -471,7 +471,7 @@ export interface ApiHotspotHotspot extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> &
       Schema.Attribute.Private;
-    image: Schema.Attribute.Media<"images">;
+    image: Schema.Attribute.Media<"images", true>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       "oneToMany",

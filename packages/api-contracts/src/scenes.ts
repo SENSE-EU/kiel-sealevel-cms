@@ -39,6 +39,7 @@ export const HotspotSchema = z.object({
   id: DocumentIdSchema,
   title: ShortLabelSchema,
   body: RichTextSchema,
+  images: z.array(MediaSchema),
   image: MediaSchema.nullable(),
   video: MediaSchema.nullable(),
   anchor: z.string().min(1),
