@@ -11,6 +11,7 @@ import { createScenesService } from "../services/scenes";
 
 export default ({ strapi }: { strapi: Core.Strapi }): Core.Controller => {
   const service = createScenesService(strapi);
+  const serverUrl = strapi.config.get<string>("server.url", "");
 
   return {
     async list(ctx) {
@@ -26,7 +27,7 @@ export default ({ strapi }: { strapi: Core.Strapi }): Core.Controller => {
       try {
         const scenes = await service.list(query.data.locale);
         ctx.body = SceneListResponseSchema.parse({
-          data: scenes.map(mapSceneSummary),
+          data: scenes.map((scene) => mapSceneSummary(scene, serverUrl)),
         });
       } catch (error) {
         strapi.log.error({
@@ -64,7 +65,7 @@ export default ({ strapi }: { strapi: Core.Strapi }): Core.Controller => {
         }
 
         ctx.body = SceneDetailResponseSchema.parse({
-          data: mapSceneDetail(scene),
+          data: mapSceneDetail(scene, serverUrl),
         });
       } catch (error) {
         strapi.log.error({

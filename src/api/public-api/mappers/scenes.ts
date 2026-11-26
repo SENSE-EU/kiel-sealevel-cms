@@ -8,14 +8,20 @@ type MediaDocument = Data.ContentType<"plugin::upload.file">;
 
 function mapMedia(
   media: MediaDocument | null | undefined,
+  serverUrl: string,
   includeSize = false,
 ) {
   if (!media) {
     return null;
   }
 
+  const baseUrl = serverUrl.replace(/\/+$/, "");
+  const url = media.url?.startsWith("/uploads/")
+    ? `${baseUrl}${media.url}`
+    : media.url;
+
   return {
-    url: media.url,
+    url,
     alt: media.alternativeText ?? "",
     ...(includeSize && typeof media.size === "number"
       ? { sizeBytes: Math.round(media.size * 1024) }
@@ -23,20 +29,23 @@ function mapMedia(
   };
 }
 
-export function mapSceneSummary(scene: SceneSummaryDocument) {
+export function mapSceneSummary(
+  scene: SceneSummaryDocument,
+  serverUrl: string,
+) {
   return {
     id: scene.documentId,
     slug: scene.slug,
     title: scene.title,
     teaser: scene.teaser ?? "",
-    cardImage: mapMedia(scene.cardImage),
+    cardImage: mapMedia(scene.cardImage, serverUrl),
   };
 }
 
-export function mapSceneDetail(scene: SceneDetailDocument) {
+export function mapSceneDetail(scene: SceneDetailDocument, serverUrl: string) {
   return {
-    ...mapSceneSummary(scene),
-    model: mapMedia(scene.model, true),
+    ...mapSceneSummary(scene, serverUrl),
+    model: mapMedia(scene.model, serverUrl, true),
     startViewpointId: scene.startViewpoint?.documentId ?? null,
     credits: scene.credits ?? "",
     viewpoints: [...(scene.viewpoints ?? [])]
@@ -54,8 +63,8 @@ export function mapSceneDetail(scene: SceneDetailDocument) {
         id: hotspot.documentId,
         title: hotspot.title,
         body: hotspot.body ?? "",
-        image: mapMedia(hotspot.image),
-        video: mapMedia(hotspot.video),
+        image: mapMedia(hotspot.image, serverUrl),
+        video: mapMedia(hotspot.video, serverUrl),
         anchor: hotspot.anchor,
         order: hotspot.order,
       })),
