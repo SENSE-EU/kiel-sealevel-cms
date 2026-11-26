@@ -1,0 +1,224 @@
+{
+  "source": "public/SEALEVEL_Munition_GEOMAR_media_inventory.xlsx",
+  "sheet": "Demo (used) + captions",
+  "hotspots": [
+    {
+      "sourceId": "HS-01",
+      "media": [
+        {
+          "type": "image",
+          "filename": "Open sea mine.JPG",
+          "assetId": "509641",
+          "order": 1,
+          "caption": {
+            "en": "Unexploded sea mine on the seabed",
+            "de": "Nicht explodierte Seemine am Meeresboden"
+          },
+          "credit": "GEOMAR"
+        },
+        {
+          "type": "image",
+          "filename": "Depth charge.JPG",
+          "assetId": "509632",
+          "order": 2,
+          "caption": {
+            "en": "Depth charge",
+            "de": "Wasserbombe"
+          },
+          "credit": "GEOMAR"
+        },
+        {
+          "type": "image",
+          "filename": "Seamine.JPG",
+          "assetId": "509643",
+          "order": 3,
+          "caption": {
+            "en": "Sea mine",
+            "de": "Seemine"
+          },
+          "credit": "GEOMAR"
+        },
+        {
+          "type": "image",
+          "filename": "img004924_20201108_144538078613-AUV-Team.jpg",
+          "assetId": "509654",
+          "order": 4,
+          "caption": {
+            "en": "Ammunition boxes, Bay of Lübeck",
+            "de": "Munitionskisten, Lübecker Bucht"
+          },
+          "credit": "AUV Team/GEOMAR"
+        },
+        {
+          "type": "image",
+          "filename": "frontview of depth charge.JPG",
+          "assetId": "509646",
+          "order": 5,
+          "caption": {
+            "en": "Depth charge (front view)",
+            "de": "Wasserbombe (Vorderansicht)"
+          },
+          "credit": "GEOMAR"
+        }
+      ]
+    },
+    {
+      "sourceId": "HS-02",
+      "media": [
+        {
+          "type": "image",
+          "filename": "Fi103 warheads in LuebeckBay.jpeg",
+          "assetId": "5316823",
+          "order": 1,
+          "caption": {
+            "en": "Corroded Fi 103 (V1) warheads — explosive dissolving into the water",
+            "de": "Korrodierte Fi-103-(V1-)Gefechtsköpfe – Sprengstoff löst sich im Wasser"
+          },
+          "credit": "GEOMAR"
+        },
+        {
+          "type": "image",
+          "filename": "Mine with open shell and TNT in  the background.JPG",
+          "assetId": "509638",
+          "order": 2,
+          "caption": {
+            "en": "Mine with open casing, exposed TNT",
+            "de": "Mine mit offener Hülle, freiliegendes TNT"
+          },
+          "credit": "GEOMAR"
+        },
+        {
+          "type": "image",
+          "filename": "TNT covered with biofilm and sessile organisms.JPG",
+          "assetId": "509644",
+          "order": 3,
+          "caption": {
+            "en": "TNT covered in biofilm and marine life",
+            "de": "TNT bedeckt mit Biofilm und Meeresorganismen"
+          },
+          "credit": "GEOMAR"
+        },
+        {
+          "type": "image",
+          "filename": "Rusty groundmine.JPG",
+          "assetId": "509642",
+          "order": 4,
+          "caption": {
+            "en": "Corroded ground mine",
+            "de": "Korrodierte Grundmine"
+          },
+          "credit": "GEOMAR"
+        },
+        {
+          "type": "image",
+          "filename": "Corroded Fieseler Fi 103 war head with dissolving explosive in Luebeck Bay.jpg",
+          "assetId": "5331596",
+          "order": 5,
+          "caption": {
+            "en": "Corroded Fi 103 warhead, dissolving explosive",
+            "de": "Korrodierter Fi-103-Gefechtskopf, sich lösender Sprengstoff"
+          },
+          "credit": ""
+        }
+      ]
+    },
+    {
+      "sourceId": "HS-03",
+      "media": [
+        {
+          "type": "video",
+          "filename": "2024-06-10_Kolberger-Heide_Munition_ROV.mp4",
+          "assetId": "5213094",
+          "order": 1,
+          "caption": {
+            "en": "▶ ROV survey footage, Kolberger Heide (2024) — click to play",
+            "de": "▶ ROV-Aufnahmen, Kolberger Heide (2024) – zum Abspielen klicken"
+          },
+          "credit": "ROV-Team GEOMAR"
+        },
+        {
+          "type": "image",
+          "filename": "AUV_GIRONA500_MarcSeidel.jpg",
+          "assetId": "2392731",
+          "order": 2,
+          "caption": {
+            "en": "GEOMAR AUV GIRONA500 recovered after a survey dive",
+            "de": "GEOMAR-AUV GIRONA500 nach einem Vermessungstauchgang geborgen"
+          },
+          "credit": "Marc Seidel/GEOMAR; Vor Nutzzng bei Marc Seidel anfragen"
+        },
+        {
+          "type": "image",
+          "filename": "AUV_GIRONA500_a_MarcSeidel.jpg",
+          "assetId": "5324286",
+          "order": 3,
+          "caption": {
+            "en": "GEOMAR AUV GIRONA500 on deck",
+            "de": "GEOMAR-AUV GIRONA500 an Deck"
+          },
+          "credit": ""
+        }
+      ]
+    },
+    {
+      "sourceId": "HS-04",
+      "media": [
+        {
+          "type": "image",
+          "filename": "AL648_SAS_Grundminen_und_Bomben_merged_c_DSM-GEOMAR.jpg",
+          "assetId": "5712442",
+          "order": 1,
+          "caption": {
+            "en": "SAS sonar map: ground mines & bombs",
+            "de": "SAS-Sonarkarte: Grundminen und Bomben"
+          },
+          "credit": "DSM, GEOMAR; freugeben von Jens Greinert"
+        },
+        {
+          "type": "image",
+          "filename": "KolbergerHeide_Krater_Fotomosaik_MKampmeier_GEOMAR.png",
+          "assetId": "5194974",
+          "order": 2,
+          "caption": {
+            "en": "High-res photomosaic of craters, Kolberger Heide",
+            "de": "Hochauflösendes Fotomosaik von Kratern, Kolberger Heide"
+          },
+          "credit": "Mareike Kampmeier, DSM, GEOMAR, 2023"
+        },
+        {
+          "type": "image",
+          "filename": "LuebeckerBuhct_Streubomben_Fotomosaik_MKampmeier_GEOMAR.png",
+          "assetId": "5194975",
+          "order": 3,
+          "caption": {
+            "en": "Photomosaic of a cluster-bomb field, Bay of Lübeck",
+            "de": "Fotomosaik eines Streubombenfelds, Lübecker Bucht"
+          },
+          "credit": "Mareike Kampmeier, DSM, GEOMAR, 2023"
+        },
+        {
+          "type": "image",
+          "filename": "AL648_Grundminen_merged_c_DSM-GEOMAR.jpg",
+          "assetId": "5712441",
+          "order": 4,
+          "caption": {
+            "en": "SAS sonar map of ground mines (AL648)",
+            "de": "SAS-Sonarkarte von Grundminen (AL648)"
+          },
+          "credit": "DSM, GEOMAR; freugeben von Jens Greinert"
+        },
+        {
+          "type": "image",
+          "filename": "Munitionskistenhaufen in der Luebecker Bucht_1.jpg",
+          "assetId": "5324291",
+          "order": 5,
+          "caption": {
+            "en": "Pile of ammunition boxes, Bay of Lübeck",
+            "de": "Haufen von Munitionskisten, Lübecker Bucht"
+          },
+          "credit": ""
+        }
+      ]
+    }
+  ]
+}

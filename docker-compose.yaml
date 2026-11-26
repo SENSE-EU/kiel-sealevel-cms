@@ -11,6 +11,7 @@ services:
       - ./config:/opt/app/config
       - ./packages:/opt/app/packages
       - ./src:/opt/app/src
+      - ./demo-materials:/opt/app/demo-materials:ro
       - ./package.json:/opt/package.json
       - ./pnpm-lock.yaml:/opt/pnpm-lock.yaml
       - ./.env:/opt/app/.env  # Needed because Strapi uses dotenv to read .env in development

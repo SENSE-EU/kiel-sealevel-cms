@@ -49,6 +49,13 @@ Start Strapi in development mode with automatic reload:
 pnpm run develop
 ```
 
+### Demo content
+
+The demo content is seeded automatically during Strapi's bootstrap. Bootstrap
+runs on every application start, but a database marker skips it after the seed
+has completed successfully once. Demo assets, including the scene GLB, are
+loaded from `demo-materials`.
+
 ### Production
 
 Build the Strapi admin panel:
