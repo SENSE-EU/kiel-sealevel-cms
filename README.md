@@ -53,8 +53,12 @@ pnpm run develop
 
 The demo content is seeded automatically during Strapi's bootstrap. Bootstrap
 runs on every application start, but a database marker skips it after the seed
-has completed successfully once. Demo assets, including the scene GLB, are
-loaded from `demo-materials`.
+has completed successfully once. Demo media already in the Media Library is
+reused. The optional `demo-materials` folder is not bundled; if required media
+is missing from both the Media Library and that local folder, bootstrap logs
+the seed as pending without preventing Strapi from starting. Each hotspot
+receives its first configured image as an image collection and its first
+configured video, when available.
 
 ### Production
 

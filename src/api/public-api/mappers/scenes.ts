@@ -59,14 +59,21 @@ export function mapSceneDetail(scene: SceneDetailDocument, serverUrl: string) {
       })),
     hotspots: [...(scene.hotspots ?? [])]
       .sort((left, right) => (left.order ?? 0) - (right.order ?? 0))
-      .map((hotspot) => ({
-        id: hotspot.documentId,
-        title: hotspot.title,
-        body: hotspot.body ?? "",
-        image: mapMedia(hotspot.image, serverUrl),
-        video: mapMedia(hotspot.video, serverUrl),
-        anchor: hotspot.anchor,
-        order: hotspot.order,
-      })),
+      .map((hotspot) => {
+        const images = (hotspot.image ?? []).map((image) =>
+          mapMedia(image, serverUrl),
+        );
+
+        return {
+          id: hotspot.documentId,
+          title: hotspot.title,
+          body: hotspot.body ?? "",
+          images,
+          image: images[0] ?? null,
+          video: mapMedia(hotspot.video, serverUrl),
+          anchor: hotspot.anchor,
+          order: hotspot.order,
+        };
+      }),
   };
 }
