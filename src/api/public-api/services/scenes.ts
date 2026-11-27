@@ -12,7 +12,7 @@ export const createScenesService = (strapi: Core.Strapi) => ({
       status: "published",
       populate: {
         cardImage: {
-          fields: ["url", "alternativeText"],
+          fields: ["url", "alternativeText", "caption"],
         },
       },
     });
@@ -26,7 +26,7 @@ export const createScenesService = (strapi: Core.Strapi) => ({
       status: "published",
       populate: {
         cardImage: {
-          fields: ["url", "alternativeText"],
+          fields: ["url", "alternativeText", "caption"],
         },
         model: {
           fields: ["url", "size"],
@@ -41,7 +41,7 @@ export const createScenesService = (strapi: Core.Strapi) => ({
           fields: ["documentId", "title", "body", "anchor", "order"],
           populate: {
             image: {
-              fields: ["url", "alternativeText"],
+              fields: ["url", "alternativeText", "caption"],
             },
             video: {
               fields: ["url"],

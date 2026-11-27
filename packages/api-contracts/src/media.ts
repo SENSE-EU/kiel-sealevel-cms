@@ -10,6 +10,7 @@ export const PublicUrlSchema = z.union([
 export const MediaSchema = z.object({
   url: PublicUrlSchema,
   alt: z.string(),
+  caption: z.string().optional(),
   sizeBytes: z.number().int().nonnegative().optional(),
 });
 

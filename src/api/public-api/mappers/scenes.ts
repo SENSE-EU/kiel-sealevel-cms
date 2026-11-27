@@ -23,6 +23,7 @@ function mapMedia(
   return {
     url,
     alt: media.alternativeText ?? "",
+    caption: media.caption ?? "",
     ...(includeSize && typeof media.size === "number"
       ? { sizeBytes: Math.round(media.size * 1024) }
       : {}),
